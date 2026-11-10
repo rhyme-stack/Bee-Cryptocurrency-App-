@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: clip;
+    color: #fff;
+    background: #080b10;
+}
+
+.container {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    padding: 0 clamp(1.25rem, 7vw, 7rem);
+    background: #080b10;
+}
+
+.container::after {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background: url("images/background bee crypto.png") center / cover no-repeat;
+    content: "";
+    animation: background-reveal 1.8s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+.container::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(5 8 12 / 78%) 0%, rgb(5 8 12 / 35%) 58%, rgb(5 8 12 / 5%) 100%);
+    content: "";
+    animation: overlay-reveal 1.2s ease both;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    min-height: 88px;
+    animation: fade-down 700ms ease both;
+}
+
+.logo {
+    display: block;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+    color: #f9c74f;
+}
+
+nav .btn,
+.content .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.65rem 1.65rem;
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+nav .btn:hover,
+.content .btn:hover {
+    transform: translateY(-2px);
+    border-color: #f9c74f;
+    color: #111;
+    background: #f9c74f;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.content {
+    max-width: 680px;
+    margin-top: clamp(5rem, 14vh, 10rem);
+    padding-bottom: 5rem;
+    animation: fade-up 850ms 450ms ease both;
+}
+
+.content h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(3.25rem, 8vw, 7rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.content h1 span {
+    color: #f9c74f;
+}
+
+.content p {
+    max-width: 550px;
+    color: rgb(255 255 255 / 83%);
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    line-height: 1.75;
+}
+
+.content .btn {
+    margin-top: 1.75rem;
+    min-height: 50px;
+    padding-inline: 1.8rem;
+}
+.coin-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: absolute;
+    right: 7%;
+    bottom: 40px;
+}
+
+.coin {
+    border: 2px solid rgb(255 255 255 / 16%);
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgb(255 255 255 / 6%);
+    color: #ff960b;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    animation: coin-arrive 700ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.coin:nth-child(2) {
+    animation-delay: 180ms;
+}
+
+.coin:nth-child(3) {
+    animation-delay: 360ms;
+}
+
+.coin img {
+    width: 40px;
+    margin-right: 0.5rem;
+    filter: drop-shadow(0 4px 10px rgb(0 0 0 / 28%));
+    animation: coin-float 3.2s ease-in-out infinite;
+}
+
+.coin:nth-child(2) img {
+    animation-delay: 450ms;
+}
+
+.coin:nth-child(3) img {
+    animation-delay: 900ms;
+}
+
+.coin h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.coin p {
+    color: rgb(255 255 255 / 72%);
+}
+
+@keyframes background-reveal {
+    from {
+        opacity: 0.35;
+        transform: scale(1.08);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes overlay-reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes coin-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes coin-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(4deg);
+    }
+}
+
+@keyframes fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        min-height: 100svh;
+    }
+
+    .container::after {
+        background-image: url("images/moble size background bee crypto.png");
+        background-position: center;
+    }
+
+    .container::before {
+        background: linear-gradient(90deg, rgb(5 8 12 / 78%) 0%, rgb(5 8 12 / 46%) 100%);
+    }
+
+    nav {
+        position: relative;
+        z-index: 4;
+        justify-content: space-between;
+        min-height: 76px;
+        animation: none;
+    }
+
+    .container {
+        overflow: visible;
+    }
+
+    .menu-backdrop {
+        position: fixed;
+        z-index: 3;
+        inset: 0;
+        border: 0;
+        background: rgb(3 5 9 / 58%);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 280ms ease, visibility 280ms ease;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    body.menu-open .menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: min(84vw, 340px);
+        padding: 6.5rem 1.5rem 2rem;
+        border-right: 1px solid rgb(255 255 255 / 16%);
+        background: linear-gradient(155deg, rgb(29 34 44 / 88%), rgb(11 15 22 / 91%));
+        -webkit-backdrop-filter: blur(24px) saturate(135%);
+        backdrop-filter: blur(24px) saturate(135%);
+        box-shadow: 20px 0 60px rgb(0 0 0 / 35%);
+        visibility: hidden;
+        transform: translateX(-102%);
+        transition: transform 280ms ease, visibility 280ms ease;
+    }
+
+    nav ul::before {
+        margin-bottom: 1rem;
+        padding: 0 0.5rem 1rem;
+        border-bottom: 1px solid rgb(255 255 255 / 14%);
+        color: #f9c74f;
+        content: "NAVIGATION";
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+    }
+
+    nav ul.is-open {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem 0.75rem;
+        border-bottom: 1px solid rgb(255 255 255 / 10%);
+        border-radius: 8px;
+        font-size: 1.05rem;
+        transition: color 180ms ease, background-color 180ms ease, padding 180ms ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus-visible {
+        padding-left: 1rem;
+        color: #f9c74f;
+        background: rgb(255 255 255 / 6%);
+    }
+
+    nav .btn {
+        margin-left: auto;
+        min-height: 40px;
+        padding-inline: 1.15rem;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 4;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 1px solid rgb(255 255 255 / 60%);
+        border-radius: 50%;
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: currentColor;
+        transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .content {
+        max-width: 540px;
+        margin-top: clamp(5rem, 16vh, 8rem);
+        padding-bottom: 1rem;
+    }
+
+    .content p br {
+        display: none;
+    }
+
+    .coin-list {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        margin: 2rem 0 2.5rem;
+    }
+
+    .coin {
+        flex: 1 1 145px;
+        min-width: 0;
+        padding: 0.65rem 0.75rem;
+    }
+
+    .coin img {
+        width: 34px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding-inline: 1.1rem;
+    }
+
+    .content h1 {
+        font-size: clamp(3rem, 15vw, 4.1rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

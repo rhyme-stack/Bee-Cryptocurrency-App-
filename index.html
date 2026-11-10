@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Cryptocurrency App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="menu-backdrop" type="button" aria-label="Close navigation menu" tabindex="-1"></button>
+        <nav>
+            <img src="images/bee logo.png" class="logo" alt="Bee Crypto">
+            <ul id="site-menu" aria-label="Main navigation">
+                <li><a href="#">Market</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">White Paper</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <a href="#" class="btn">EN</a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="content">
+            <h1>BUY & <br>SELL <span>Crypto</span></h1>
+            <p>Buy, sell, and manage your crypto with confidence. Experience a <br> smarter, faster, and simpler way to trade digital assets with Bee Crypto.
+            </p>
+            <a href="#" class="btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="coin-list">
+            <div class="coin">
+                <img src="images/bitcoin.png" alt="Bitcoin">
+                <div class="coin-info">
+                    <h3>$<span id="bitcoin-price"></span></h3>
+                    <p>Bitcoin</p>
+                </div>
+            </div>
+             <div class="coin">
+                <img src="images/ethereum.png" alt="Ethereum">
+                <div class="coin-info">
+                    <h3>$<span id="ethereum-price"></span></h3>
+                    <p>Ethereum</p>
+                </div>
+            </div>
+            <div class="coin">
+                <img src="images/dogecoin.png" alt="Dogecoin">
+                <div class="coin-info">
+                    <h3>$<span id="dogecoin-price"></span></h3>
+                    <p>Dogecoin</p>
+                </div>
+            </div>
+                
+        </div>
+        
+
+    </div>
+   
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
